@@ -2,9 +2,12 @@
   "name": "chatapp-sockets.io",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon -e js -r dotenv/config ./src/server.js",
+    "start": "node ./src/server.js"
   },
   "repository": {
     "type": "git",
@@ -19,9 +22,11 @@
   "homepage": "https://github.com/guillermoFragachan/ChatApp-sockets.io#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "socket.io": "^4.4.0",
     "socketio": "^1.0.0"
   },
   "devDependencies": {
+    "dotenv": "^10.0.0",
     "nodemon": "^2.0.15"
   }
 }
