@@ -4,10 +4,9 @@ import { createServer } from 'http';
 
 const app = express(); 
 const server = createServer(app); 
-const socketio = new Server(server)
+const io = new Server(server)
 
 
-const sockets = new Server(server, {})
 
 app.get('/', (req, res) => {
     res.send('<h1>Hello world</h1>');
@@ -17,7 +16,7 @@ app.get('/', (req, res) => {
     console.log('listening on *:3000');
   });
 
-  socketio.on('connection', socket =>{
+  io.on('connection', socket =>{
 
      socket.on('message', ({name, message}) =>{
        io.emit('message', {name, message})
